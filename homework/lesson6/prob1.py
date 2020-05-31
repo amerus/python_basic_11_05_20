@@ -11,21 +11,21 @@
 class TrafficLight:
     __colors = [ "красный", "желтый", "зеленый" ]
     __timing = [ 7, 2, 8 ]
-    _color = "красный"
+    __color = "красный"
 
     def running(self, color):
-        self.index_of_existing = self.__colors.index(self._color)
+        self.index_of_existing = self.__colors.index(self.__color)
         try:
             self.index_of_request = self.__colors.index(color)
         except ValueError:
             print(f'Нет такого цвета у светофора: {color}.')
             exit(1)
         if(self.index_of_existing == self.index_of_request):
-            print(f"Цвета светофора должны переключаться. Текущий цвет уже {self._color}.")
+            print(f"Цвета светофора должны переключаться. Текущий цвет уже {self.__color}.")
         elif((self.index_of_existing == self.__colors.index(self.__colors[-1])) and (self.index_of_request == 0) or
                 (self.index_of_request - self.index_of_existing == 1)):
-            self._color = self.__colors[self.index_of_request]
-            print(f"Цвет переключается на {self._color}, и продолжительность составит {self.__timing[self.index_of_request]} секунд(ы).")
+            self.__color = self.__colors[self.index_of_request]
+            print(f"Цвет переключается на {self.__color}, и продолжительность составит {self.__timing[self.index_of_request]} секунд(ы).")
         else:
             print(f"Цвета должны быть последовательны. Вы пропустили {self.__colors[self.index_of_request-1]}.")
 

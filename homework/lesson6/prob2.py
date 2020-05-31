@@ -8,15 +8,13 @@
 '''
 
 class Road:
-    __length = 0
-    __width = 0
     def __init__(self, length, width):
-        self.__length = length
-        self.__width = width
+        self._length = length
+        self._width = width
     def total_mass(self, mass_per_meter, depth):
         self.mass = mass_per_meter
         self.depth = depth
-        return int(self.__length * self.__width * self.mass * self.depth / 1000)
+        return int(self._length * self._width * self.mass * self.depth / 1000)
 
 
 my_road = Road(20, 5000)
