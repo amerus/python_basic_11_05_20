@@ -1,0 +1,4 @@
+Motorny 40000
+Alexandrov 20000
+Petrov 15000
+Sidorov 12000
